@@ -2,7 +2,7 @@
   "name": "cinematch",
   "private": true,
   "version": "1.0.0",
-  "homepage": "cinematch",
+  "homepage": "/cinematch",
   "type": "module",
   "scripts": {
     "dev": "vite",
