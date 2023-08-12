@@ -7,5 +7,5 @@ export default defineConfig({
   optimizeDeps: {
     include: ['@mui/icons-material'],
 },
-base:"/"
+base:"/cinematch/"
 })
