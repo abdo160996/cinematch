@@ -10,8 +10,7 @@ import { Navigate,useLocation } from "react-router-dom";
 
 function Login() {
   const isLoggedIn = useSelector(loggedInSelector);
-  const loc = window.location
-  console.log(loc)
+ 
   const [getRequestToken, { data, isLoading, isSuccess: isRequestToken }] = useLazyGetRequestTokenQuery();
 
   const handleTMDBLogin = () => {
@@ -33,7 +32,7 @@ function Login() {
             <code style={{color:"GrayText"}}>
               Test Account <br /> username : test_acc_2023 <br /> password : 123456asd{" "}
             </code>
-            <Button href={`https://www.themoviedb.org/authenticate/${data?.request_token}?redirect_to=/approved`} variant="contained">
+            <Button href={`https://www.themoviedb.org/authenticate/${data?.request_token}?redirect_to=${window.location.origin}/approved`} variant="contained">
               Approve login request
             </Button>
           </>
