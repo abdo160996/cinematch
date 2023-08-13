@@ -1,17 +1,17 @@
 import * as React from "react";
-import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Tooltip } from "@mui/material/";
+import { Box, Avatar, Menu, MenuItem, ListItemIcon, Divider, IconButton, Tooltip, Snackbar } from "@mui/material/";
 
 import Settings from "@mui/icons-material/Settings";
 import Logout from "@mui/icons-material/Logout";
 import {  useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../redux/UserSlice";
+import { alertSelector, closeSnack, loggedInSelector, logout } from "../../redux/UserSlice";
 
 export default function TopMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  const isLoggedIn = useSelector(loggedInSelector);
+  const showAlert = useSelector(alertSelector)
 
- 
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const open = Boolean(anchorEl);
@@ -29,12 +29,22 @@ export default function TopMenu() {
 
   const handleLogout = () => {
     dispatch(logout())
+ 
   };
   const handleLogin = () => {
     navigate("/login");
+    
   };
+ 
+ const handleSnackClose = ()=>{
+  dispatch(closeSnack())
+ }
+
   return (
     <React.Fragment>
+     
+   
+      <Snackbar open={showAlert} onClose={handleSnackClose} autoHideDuration={3000} message={`${isLoggedIn ? "Logged in successfully": "Logged out!"}`} />
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
         <Tooltip title="Account settings">
           <IconButton onClick={handleClick} size="small" sx={{ ml: 2 }} aria-controls={open ? "account-menu" : undefined} aria-haspopup="true" aria-expanded={open ? "true" : undefined}>

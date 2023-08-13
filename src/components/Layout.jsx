@@ -17,16 +17,15 @@ function Layout() {
         <Sidebar />
         <Box overflow={"hidden"} flex={1}>
           <Navbar />
-    
-            <Slide direction="down"  mountOnEnter unmountOnExit  in={showSearchBar}>
-              <div>
-             <QuickSearch />
+          <Slide direction="down" mountOnEnter unmountOnExit in={showSearchBar}>
+            <div>
+              <QuickSearch />
             </div>
-            </Slide>
+          </Slide>
           <CustomizedBreadcrumbs />
           <Suspense fallback={"Loading..."}>
-          <Outlet  />
-       </Suspense>
+            <Outlet />
+          </Suspense>
         </Box>
       </Stack>
     </Box>
