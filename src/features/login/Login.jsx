@@ -6,11 +6,12 @@ import { Button, Stack } from "@mui/material";
 import { useSelector } from "react-redux";
 import { useLazyGetRequestTokenQuery } from "../../api/authApi";
 import { loggedInSelector } from "../../redux/UserSlice";
-import { Navigate } from "react-router-dom";
+import { Navigate,useLocation } from "react-router-dom";
 
 function Login() {
   const isLoggedIn = useSelector(loggedInSelector);
-
+  const loc = useLocation()
+  console.log(loc)
   const [getRequestToken, { data, isLoading, isSuccess: isRequestToken }] = useLazyGetRequestTokenQuery();
 
   const handleTMDBLogin = () => {
