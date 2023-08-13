@@ -10,7 +10,7 @@ import { Navigate,useLocation } from "react-router-dom";
 
 function Login() {
   const isLoggedIn = useSelector(loggedInSelector);
-  const loc = useLocation()
+  const loc = window.location
   console.log(loc)
   const [getRequestToken, { data, isLoading, isSuccess: isRequestToken }] = useLazyGetRequestTokenQuery();
 
