@@ -32,10 +32,10 @@ const multiRoutes = [":mediaType/:id", ":category/:mediaType/:id", "search/:keyw
 });
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/cinematch" element={<Layout />} errorElement={<NotFound/>}>
+    <Route path="/cinematch/" element={<Layout />} errorElement={<NotFound/>}>
       <Route index  element={<Home />} />
-      <Route path="/login" element={<Login/>}/>
-      <Route path="/approved" element={<ConfirmLogin/>}/>
+      <Route path="login" element={<Login/>}/>
+      <Route path="approved" element={<ConfirmLogin/>}/>
       
       <Route path="feed/:mediaType" element={<NowPlaying />} />
       <Route path="trending/:mediaType" element={<Trending />} />
