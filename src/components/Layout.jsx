@@ -24,7 +24,7 @@ function Layout() {
             </div>
             </Slide>
           <CustomizedBreadcrumbs />
-          <Suspense fallback={"..."}>
+          <Suspense fallback={"Loading..."}>
           <Outlet  />
        </Suspense>
         </Box>
