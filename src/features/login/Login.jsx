@@ -33,8 +33,7 @@ function Login() {
               Test Account <br /> username : test_acc_2023 <br /> password : 123456asd{" "}
             </code>
             <Button href={`https://www.themoviedb.org/authenticate/${data?.request_token}?redirect_to=/https://github.com/abdo160996/cinematch
-/approved`} variant="contained">
-              Approve login request
+/approved`} variant="contained">        
             </Button>
           </>
         )}
