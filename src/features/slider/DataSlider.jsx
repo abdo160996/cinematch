@@ -17,7 +17,7 @@ import "swiper/css/free-mode";
 import { ShowDateChip, ShowInfoBox, ShowTitle } from "../../components/styledComponents";
 import { Link, useParams } from "react-router-dom";
 import { useState } from "react";
-import { POSTER_500 } from "../../constants/constants";
+import { POSTER_500,POSTER_BACKUP } from "../../constants/constants";
 
 export function generatePath(show,mediaType) {
   if (!mediaType) {
