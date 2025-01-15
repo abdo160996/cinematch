@@ -3,6 +3,7 @@ const MovieChip = styled(Chip)(({ theme }) => ({
   color: "white",
   backgroundColor: theme.palette.custom.chipbg,
   fontWeight: "600",
+  margin: "0rem",
 }));
 const MovieDivider = styled(Divider)(({ theme }) => ({
   ":after,:before": { borderColor: theme.palette.primary },

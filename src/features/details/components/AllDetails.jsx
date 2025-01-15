@@ -60,7 +60,7 @@ function AllDetails({ showData }) {
           <Stack direction={"row"} flexWrap={"wrap"}  gap={4} marginTop={4}>
             <MovieChip icon={<StarIcon />} label={showData?.vote_average.toFixed(1)} />
             <MovieChip icon={<AccessTimeIcon />} label={getMovieTime(showData.runtime)} />
-            <MovieChip sx={{m:0}} icon={<DateRangeIcon />} label={showData.release_date || showData.first_air_date} />
+            <MovieChip  icon={<DateRangeIcon />} label={showData.release_date || showData.first_air_date} />
           </Stack>
           <Stack direction="row" spacing={1}>
             {showData.imdb_id && (
