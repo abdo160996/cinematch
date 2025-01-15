@@ -57,10 +57,10 @@ function AllDetails({ showData }) {
 
         {/* summary */}
         <Stack direction={"column"} alignItems={"center"} spacing={2}>
-          <Stack direction={"row"} flexWrap={"wrap"} spacing={2} marginTop={4}>
+          <Stack direction={"row"} flexWrap={"wrap"}  gap={4} marginTop={4}>
             <MovieChip icon={<StarIcon />} label={showData?.vote_average.toFixed(1)} />
             <MovieChip icon={<AccessTimeIcon />} label={getMovieTime(showData.runtime)} />
-            <MovieChip icon={<DateRangeIcon />} label={showData.release_date || showData.first_air_date} />
+            <MovieChip sx={{m:0}} icon={<DateRangeIcon />} label={showData.release_date || showData.first_air_date} />
           </Stack>
           <Stack direction="row" spacing={1}>
             {showData.imdb_id && (
